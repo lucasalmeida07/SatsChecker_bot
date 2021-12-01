@@ -1,8 +1,8 @@
 import telebot
 from Defs import *
+import os
 
-
-key = '2147013825:AAENiKfIl4l2YAzFlD1Z0rkIveJsInQkm3g'
+key = os.environ['API_key']
 bot = telebot.TeleBot(key)
 
 
