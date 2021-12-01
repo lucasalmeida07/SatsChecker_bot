@@ -61,7 +61,7 @@ def getsatsprice():
     """
     btc = getbtcprice()
     if btc != None:
-        sat = btc/100000
+        sat = btc/100000000
         return sat
     else:
         return None
