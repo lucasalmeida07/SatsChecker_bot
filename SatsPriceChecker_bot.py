@@ -13,6 +13,7 @@ def main():
     def greeting(message):
         bot.send_message(message, 'Olá, seja bem vindo ao SatsChecker, seu Bot para consulta do preço do Bitcoin')
         
+    
     @bot.message_handler(commands=['help'])
     def helping(message):
 	bot.reply_to(message, '''
