@@ -11,7 +11,7 @@ bot = telebot.TeleBot(key)
 def main():
     @bot.message_handler(commands=['start'])
     def greeting(message):
-        bot.send_message(message, 'Olá, seja bem vindo ao SatsChecker, seu Bot para consulta do preço do Bitcoin')
+        bot.reply_to(message, 'Olá, seja bem vindo ao SatsChecker, seu Bot para consulta do preço do Bitcoin')
         
     
     @bot.message_handler(commands=['help'])
