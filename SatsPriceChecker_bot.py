@@ -13,9 +13,8 @@ def main():
     def greeting(message):
         bot.send_message(message, 'Olá, seja bem vindo ao SatsChecker, seu Bot para consulta do preço do Bitcoin')
         
-    
-  @bot.message_handler(commands=['help'])
-  def helping(message):
+    @bot.message_handler(commands=['help'])
+    def helping(message):
 	bot.reply_to(message, '''
 	O SatsChecker foi criado com a intenção de ajudar na consulta do preço do bitcoin em tempo real, realizando diversas funcionalidades de auxilio para quando você precisar. Esta é a versão alpha do bot, portanto, a 0.1 \o/. Mais funcionalidades serão adicionadas no decorrer do tempo e de acordo com a disponibilidade do desenvolvedor.
 
