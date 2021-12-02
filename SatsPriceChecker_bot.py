@@ -15,18 +15,18 @@ def main():
         
     
   @bot.message_handler(commands=['help'])
-	def helping(message):
-		bot.reply_to(message, '''
-		O SatsChecker foi criado com a intenção de ajudar na consulta do preço do bitcoin em tempo real, realizando diversas funcionalidades de auxilio para quando você precisar. Esta é a versão alpha do bot, portanto, a 0.1 \o/. Mais funcionalidades serão adicionadas no decorrer do tempo e de acordo com a disponibilidade do desenvolvedor.
-		
-		Aqui vão os comandos disponíveis nesta versão:
-		/start -----	Retorna uma mensaguem de boas vindas
-		/help  -----	Retorna esta mensagem de ajuda
-		/showPrice --- Retorna o preço atual do Bitcoin(Por enquanto, utilizando apenas a cotação disponível pela Cointelegraph)
-		/showSats --- Retorna o preço atual de 1.000(mil) satoshis
+  def helping(message):
+	bot.reply_to(message, '''
+	O SatsChecker foi criado com a intenção de ajudar na consulta do preço do bitcoin em tempo real, realizando diversas funcionalidades de auxilio para quando você precisar. Esta é a versão alpha do bot, portanto, a 0.1 \o/. Mais funcionalidades serão adicionadas no decorrer do tempo e de acordo com a disponibilidade do desenvolvedor.
 
-		Por enquanto apenas estes comandos estão disponíveis.
-		''')  
+	Aqui vão os comandos disponíveis nesta versão:
+	/start -----	Retorna uma mensaguem de boas vindas
+	/help  -----	Retorna esta mensagem de ajuda
+	/showPrice --- Retorna o preço atual do Bitcoin(Por enquanto, utilizando apenas a cotação disponível pela Cointelegraph)
+	/showSats --- Retorna o preço atual de 1.000(mil) satoshis
+
+	Por enquanto apenas estes comandos estão disponíveis.
+	''')  
     
 
     @bot.message_handler(commands=['showprice'])
