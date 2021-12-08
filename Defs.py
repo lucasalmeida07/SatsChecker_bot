@@ -5,7 +5,7 @@
         §1 getbs()
         §2 getbtcprice()
         §3 getsatprice()
-
+        §4 satscovert()
 """
 
 
@@ -34,11 +34,11 @@ def getbs(url='https://cointelegraph.com.br/bitcoin-price'):
         return bs
 
 
-def getbtcprice(incash=False):
+def getbtcprice():
     """
     Função para capturar o preço atual do Bitcoin no site dado
 
-    :return: Retorna o preço atual do Bitcoin de acordo com o site utilizado
+    :return: Retorna o preço atual do Bitcoin de acordo com o site utilizado ou um valor None caso tenha ocorrido um erro
     """
     site = getbs()
     if site != None:
@@ -46,10 +46,8 @@ def getbtcprice(incash=False):
         for price in prices:
             if 'R$' in price.get_text():
                 p = price.get_text()
-        if incash is False:
-            return float(p[3:])
-        else:
-            return p[1:]
+        btc_brl = float(p[3:]) 
+        return btc_brl 
     else:
         return None
 
@@ -57,12 +55,24 @@ def getbtcprice(incash=False):
 def getsatsprice():
     """
 
-    :return: Preço de um Satoshi na data atual
+    :return: Preço de 1000 Satoshis na data atual
     """
     btc = getbtcprice()
     if btc != None:
         sat = btc/100000
         return sat
+    else:
+        return None
+
+
+def satsconvert(quant):
+    """
+    :return: Preço de uma quantia x em satoshis para BRL
+    """
+    entry = getsatsprice()
+    if entry != None:
+        brl_price = entry * quant
+        return brl_price
     else:
         return None
 
