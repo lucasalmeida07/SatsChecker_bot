@@ -46,7 +46,8 @@ def getbtcprice():
         for price in prices:
             if 'R$' in price.get_text():
                 p = price.get_text()
-        btc_brl = float(p[3:]) 
+        btc_brl = float(p[3:])
+        btc_brl *= 1000
         return btc_brl 
     else:
         return None
@@ -70,6 +71,7 @@ def satsconvert(quant):
     :return: Preço de uma quantia x em satoshis para BRL
     """
     entry = getsatsprice()
+    entry /= 1000
     if entry != None:
         brl_price = entry * quant
         return brl_price
